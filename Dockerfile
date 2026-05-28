@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 2. Agrega zip a la lista de extensiones de PHP
-RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd zip xml curl dev gd curl zip cli 
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd zip xml curl
 
 # Obtener Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
